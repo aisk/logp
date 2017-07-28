@@ -8,9 +8,10 @@ import (
 )
 
 var (
-	output     = colorable.NewColorableStderr()
-	InfoPrefix = color.GreenString("[INFO]")
-	WarnPrefix = color.RedString("[WARNING]")
+	output      = colorable.NewColorableStderr()
+	InfoPrefix  = color.GreenString("[INFO]")
+	WarnPrefix  = color.RedString("[WARNING]")
+	ErrorPrefix = color.RedString("[ERROR]")
 )
 
 func loggerPrintln(prefix string, msgs ...interface{}) {
@@ -37,4 +38,12 @@ func Warn(msgs ...interface{}) {
 
 func Warnf(format string, msgs ...interface{}) {
 	loggerPrintf(WarnPrefix, format, msgs)
+}
+
+func Error(msgs ...interface{}) {
+	loggerPrintln(ErrorPrefix, msgs...)
+}
+
+func Errorf(format string, msgs ...interface{}) {
+	loggerPrintf(ErrorPrefix, format, msgs)
 }
