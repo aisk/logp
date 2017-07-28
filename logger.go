@@ -15,7 +15,7 @@ var (
 
 func loggerPrintln(prefix string, msgs ...interface{}) {
 	msgs = append([]interface{}{prefix}, msgs...)
-	fmt.Println(output, msgs...)
+	fmt.Fprintln(output, msgs...)
 }
 
 func loggerPrintf(prefix string, format string, msgs ...interface{}) {
