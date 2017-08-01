@@ -29,7 +29,7 @@ func Info(msgs ...interface{}) {
 }
 
 func Infof(format string, msgs ...interface{}) {
-	loggerPrintf(InfoPrefix, format, msgs)
+	loggerPrintf(InfoPrefix, format, msgs...)
 }
 
 func Warn(msgs ...interface{}) {
@@ -37,7 +37,7 @@ func Warn(msgs ...interface{}) {
 }
 
 func Warnf(format string, msgs ...interface{}) {
-	loggerPrintf(WarnPrefix, format, msgs)
+	loggerPrintf(WarnPrefix, format, msgs...)
 }
 
 func Error(msgs ...interface{}) {
@@ -45,5 +45,5 @@ func Error(msgs ...interface{}) {
 }
 
 func Errorf(format string, msgs ...interface{}) {
-	loggerPrintf(ErrorPrefix, format, msgs)
+	loggerPrintf(ErrorPrefix, format, msgs...)
 }
